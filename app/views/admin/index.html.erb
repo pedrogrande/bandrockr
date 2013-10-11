@@ -63,7 +63,7 @@
 			<tbody>
 				<% @gigs.each do |gig| %>
 					<tr>
-						<td><%= link_to gig.name, gig %></td>
+						<td><%= link_to gig.title, gig %></td>
 						<td><%= gig.date.strftime("%A, %e %B %Y") %></td>
 						<td><%= gig.location %></td>
 						<td>
@@ -113,10 +113,10 @@
 								<% album.tracks.each do |track| %>
 									<p><%= track.title %> [<%= link_to "Edit", edit_track_path(track) %>]</p>
 								<% end %>
-								<%= link_to "Add a track", new_track_path, class: 'btn btn-warning' %>
 							<% end %>
+							<%= link_to "Add a track", new_track_path, class: 'btn btn-warning' %>
 						</td>
-						<td><%= link_to "Edit", edit_album_path, class: 'btn btn-warning' %></td>
+						<td><%= link_to "Edit", edit_album_path(album), class: 'btn btn-warning' %></td>
 				        <td><%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 				    </tr>
 				<% end %>

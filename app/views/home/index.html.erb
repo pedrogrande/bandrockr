@@ -1,4 +1,22 @@
-<h3>Home</h3>
-<% @users.each do |user| %>
-  <p>User: <%=link_to user.name, user %></p>
-<% end %>
+<h1><%= @band_profile.name %></h1>
+<hr>
+<h2>The latest photo</h2>
+<%= image_tag @photo.image, class: 'img-rounded', width: '300px' %>
+<hr>
+<h2>The next gig</h2>
+<div class="well">
+	<h4><%= @gig.title %></h4>
+	<p><strong>Date:</strong> <%= @gig.date.strftime("%e %b %Y")  %></p>
+	<p><strong>Time:</strong> <%= @gig.start_time.strftime("%l.%M%p") %></p>
+	<p><strong>Location:</strong> <%= @gig.location %></p>
+	<%= link_to "Reserve your tickets now", @gig.tickets_url, class: 'btn btn-success' %>
+
+</div>
+<hr>
+<h2>Latest album</h2>
+<%= @album.title %>
+<hr>
+<h2>Latest track</h2>
+<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F<%= @track.buy_link %>"></iframe>
+
+<hr>
