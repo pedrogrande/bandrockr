@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131011022816) do
+ActiveRecord::Schema.define(version: 20131014041602) do
 
   create_table "albums", force: true do |t|
     t.string   "title"
@@ -87,6 +87,7 @@ ActiveRecord::Schema.define(version: 20131011022816) do
     t.string   "buy_link"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "embed_link"
   end
 
   add_index "tracks", ["album_id"], name: "index_tracks_on_album_id"

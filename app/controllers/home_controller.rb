@@ -1,10 +1,12 @@
 class HomeController < ApplicationController
   def index
-    @photo = Photo.first
-    @gig = Gig.next
-    @album = Album.latest
-    @track = Track.first
     @band_profile = BandProfile.first
-    @links = @band_profile.links
+    if @band_profile
+      @links = @band_profile.links
+      @photo = Photo.first
+      @gig = Gig.next
+      @album = Album.first
+      @track = Track.first
+    end
   end
 end

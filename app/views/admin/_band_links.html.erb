@@ -1,0 +1,8 @@
+<h3>Band links</h3>
+	<% if @band_profile.links.count > 0 %>
+		<h3><%= @band_profile.name %>'s Links</h3>
+		<% @band_profile.links.each do |link| %>
+			<p><%= link_to link.title, link.url %></p>
+		<% end %>
+	<% end %>
+	<p><%= link_to "Add links", new_link_path, class: 'btn btn-warning' %></p>

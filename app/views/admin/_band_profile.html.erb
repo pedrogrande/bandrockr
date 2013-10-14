@@ -1,0 +1,4 @@
+<h2><%= @band_profile.name %>'s Profile</h2>
+	<p><strong>Name:</strong> <%= @band_profile.name %></p>
+	<p><strong>Info:</strong> <%= @band_profile.info %></p>
+	<p><%= link_to "Edit band profile", edit_band_profile_path(@band_profile), class: 'btn btn-warning' %></p>
